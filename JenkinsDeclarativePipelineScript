@@ -2,7 +2,7 @@
 pipeline{
   agent any  
   tools {
-    maven "maven3.8.4"
+    maven "maven3.8.2"
   }
   triggers {
   pollSCM '* * * * * '
@@ -10,7 +10,7 @@ pipeline{
   stages {
     stage('1.CodeClone'){
       steps{
-          git branch: 'stage', credentialsId: 'GitHubCredentials', url: 'https://github.com/LandmakTechnology/web-app'
+          git branch: 'stage', credentialsId: 'GitHubCredentials', url: ''
       }
     } 
     stage('2.mavenBuild'){
